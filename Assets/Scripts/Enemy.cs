@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
     public float reachThreshold = 0.4f;
 
     private Transform target;
-    private int wavepointIndex = 0;
+    private int waypointIndex = 0;
 
     void Start()
     {
@@ -26,12 +26,12 @@ public class Enemy : MonoBehaviour
 
     private void GetNextWaypoint()
     {
-        if(wavepointIndex >= Waypoints.points.Length - 1) {
+        if(waypointIndex >= Waypoints.points.Length - 1) {
             Destroy(gameObject);
             return;
         } 
 
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        waypointIndex++;
+        target = Waypoints.points[waypointIndex];
     }
 }
